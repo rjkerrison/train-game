@@ -9,6 +9,7 @@ body {
   background-repeat: no-repeat;
   height: 100vh;
   width: 100vw;
+  margin: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,17 +17,40 @@ body {
 }
 
 .grid {
+  position: relative;
   display: grid;
   grid-template: repeat(20, 1fr) / repeat(20, 1fr);
   width: 1000px;
   height: 1000px;
+}
+.grid::before {
+  position: absolute;
+  content: '';
+  height: 100%;
+  width: 100%;
+  z-index: -1;
   background-color: rgba(156, 156, 178, 0.5);
 }
 
 .grid div {
+  position: relative;
   /* border: 1px solid grey; */
   height: 100%;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  font-size: 24px;
+}
+
+.grid div::before {
+  position: absolute;
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
 }
 
 .city {
@@ -34,45 +58,71 @@ body {
   color: white;
 }
 
-.east-north,
-.west-south,
-.west-north,
-.east-south {
+.east-north::before,
+.west-south::before,
+.west-north::before,
+.east-south::before {
   background-image: url(./bend.svg);
   background-size: cover;
 }
 
-.west-south {
+.west-south::before {
   transform: rotate(-0.25turn);
 }
 
-.east-north {
+.east-north::before {
   transform: rotate(0.25turn);
 }
 
-.east-south {
+.east-south::before {
   transform: rotate(0.5turn);
 }
 
 /* Straights */
 
-.west-east,
-.north-south {
+.west-east::before,
+.north-south::before {
   background-image: url(./straight.svg);
   background-size: cover;
 }
 
-.north-south {
+.north-south::before {
   transform: rotateZ(0.25turn);
 }
 
 /* Tee */
 
-.north-south-east {
+.north-south-east::before,
+.north-south-west::before,
+.east-west-south::before,
+.east-west-north::before {
   background-image: url(./tee.svg);
   background-size: cover;
 }
 
-.north-south-east {
+.north-south-east::before {
   transform: rotateZ(0.25turn);
+}
+
+.north-south-west::before {
+  transform: rotateZ(-0.25turn);
+}
+
+.east-west-south::before {
+  transform: rotateZ(0.5turn);
+}
+
+.train {
+  position: absolute;
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  padding: 5%;
+  background-image: url(./train.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* filter: invert(48%) sepia(15%) saturate(3207%) hue-rotate(290deg)
+    brightness(95%) contrast(80%); */
 }

@@ -1,4 +1,4 @@
-const RAIL_TYPES = {
+export const RAIL_TYPES = {
   EN: 'east-north',
   ES: 'east-south',
   WS: 'west-south',
@@ -12,7 +12,35 @@ const RAIL_TYPES = {
   CF: 'carrefour',
 }
 
-const rails = [
+export const getAllowedDirections = (type) => {
+  switch (type) {
+    case RAIL_TYPES.CF:
+      return ['east', 'north', 'south', 'west']
+    default:
+      return type.split('-')
+  }
+}
+
+const benelux = [
+  {
+    location: 4,
+    type: RAIL_TYPES.WE,
+  },
+  {
+    location: 6,
+    type: RAIL_TYPES.WE,
+  },
+  {
+    location: 5,
+    type: RAIL_TYPES.EWS,
+  },
+  {
+    location: 25,
+    type: RAIL_TYPES.NS,
+  },
+]
+
+const south = [
   {
     location: 46,
     type: RAIL_TYPES.WS,
@@ -29,10 +57,7 @@ const rails = [
     location: 87,
     type: RAIL_TYPES.WS,
   },
-  {
-    location: 107,
-    type: RAIL_TYPES.NS,
-  },
+
   {
     location: 106,
     type: RAIL_TYPES.NS,
@@ -63,6 +88,12 @@ const rails = [
   },
   {
     location: 225,
+    type: RAIL_TYPES.NS,
+  },
+]
+const transAlps = [
+  {
+    location: 107,
     type: RAIL_TYPES.NS,
   },
   {
@@ -106,5 +137,7 @@ const rails = [
     type: RAIL_TYPES.NS,
   },
 ]
+
+const rails = benelux.concat(south).concat(transAlps)
 
 export default rails
