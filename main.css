@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(./train-map.svg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  grid-template: repeat(20, 1fr) / repeat(20, 1fr);
+  width: 1000px;
+  height: 1000px;
+  background-color: rgba(156, 156, 178, 0.5);
+}
+
+.grid div {
+  border: 1px solid grey;
+  height: 100%;
+  width: 100%;
+}
+
+.city {
+  background: black;
+  color: white;
+}
+
+.east-north,
+.west-south,
+.west-north,
+.east-south {
+  background-image: url(./bend.svg);
+  background-size: cover;
+}
+
+.west-south {
+  transform: rotate(-0.25turn);
+}
+
+.east-north {
+  transform: rotate(0.25turn);
+}
+
+.east-south {
+  transform: rotate(0.5turn);
+}
+
+/* Straights */
+
+.east-west,
+.north-south {
+  background-image: url(./straight.svg);
+  background-size: cover;
+}
+
+.north-south {
+  transform: rotateZ(0.25turn);
+}
+
+/* Tee */
+
+.north-south-east {
+  background-image: url(./tee.svg);
+  background-size: cover;
+}
+
+.north-south-east {
+  transform: rotateZ(0.25turn);
+}
