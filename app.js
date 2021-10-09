@@ -1,3 +1,5 @@
+import rails from './routes.js'
+
 const grid = document.querySelector('.grid')
 
 const cities = [
@@ -9,50 +11,10 @@ const cities = [
     name: 'Rome',
     location: 175,
   },
-]
 
-const RAIL_TYPES = {
-  EN: 'east-north',
-  ES: 'east-south',
-  WS: 'west-south',
-  WN: 'west-north',
-  NS: 'north-south',
-  WE: 'west-east',
-  NSE: 'north-south-east',
-  NSW: 'north-south-west',
-  EWS: 'east-west-south',
-  EWN: 'east-west-north',
-  CF: 'carrefour',
-}
-
-const rails = [
   {
-    location: 46,
-    type: RAIL_TYPES.WS,
-  },
-  {
-    location: 66,
-    type: RAIL_TYPES.NS,
-  },
-  {
-    location: 86,
-    type: RAIL_TYPES.NSE,
-  },
-  {
-    location: 87,
-    type: RAIL_TYPES.WS,
-  },
-  {
-    location: 107,
-    type: RAIL_TYPES.NS,
-  },
-  {
-    location: 106,
-    type: RAIL_TYPES.NS,
-  },
-  {
-    location: 127,
-    type: RAIL_TYPES.EN,
+    name: 'Bord eaux',
+    location: 245,
   },
 ]
 
