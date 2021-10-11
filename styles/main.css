@@ -3,7 +3,7 @@
 }
 
 body {
-  background-image: url(./train-map.svg);
+  background-image: url(../images/train-map.svg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -62,7 +62,7 @@ body {
 .west-south::before,
 .west-north::before,
 .east-south::before {
-  background-image: url(./bend.svg);
+  background-image: url(../images/bend.svg);
   background-size: cover;
 }
 
@@ -82,7 +82,7 @@ body {
 
 .west-east::before,
 .north-south::before {
-  background-image: url(./straight.svg);
+  background-image: url(../images/straight.svg);
   background-size: cover;
 }
 
@@ -96,7 +96,7 @@ body {
 .north-south-west::before,
 .east-west-south::before,
 .east-west-north::before {
-  background-image: url(./tee.svg);
+  background-image: url(../images/tee.svg);
   background-size: cover;
 }
 
@@ -119,7 +119,7 @@ body {
   height: 100%;
   width: 100%;
   padding: 5%;
-  background-image: url(./train.svg);
+  background-image: url(../images/train.svg);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
