@@ -10,6 +10,11 @@ export const RAIL_TYPES = {
   EWS: 'east-west-south',
   EWN: 'east-west-north',
   CF: 'carrefour',
+  // For end-rails only
+  E: 'east',
+  W: 'west',
+  N: 'north',
+  S: 'south',
 }
 
 export const getAllowedDirections = (type) => {

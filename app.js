@@ -1,44 +1,7 @@
-import rails, { RAIL_TYPES, getAllowedDirections } from './routes.js'
+import { cities } from './cities.js'
+import rails, { getAllowedDirections } from './routes.js'
 
 const grid = document.querySelector('.grid')
-
-const cities = [
-  {
-    name: 'Brussels',
-    location: 3,
-    junction: RAIL_TYPES.WE,
-  },
-  {
-    name: 'Lille',
-    location: 5,
-    junction: RAIL_TYPES.EWS,
-  },
-  {
-    name: 'Luxembourg',
-    location: 7,
-    junction: RAIL_TYPES.WE,
-  },
-  {
-    name: 'Paris',
-    location: 45,
-    junction: RAIL_TYPES.EN,
-  },
-  {
-    name: 'Rome',
-    location: 175,
-    junction: RAIL_TYPES.NS,
-  },
-  {
-    name: 'Milan',
-    location: 133,
-    junction: RAIL_TYPES.WE,
-  },
-  {
-    name: 'Bordeaux',
-    location: 245,
-    junction: RAIL_TYPES.NS,
-  },
-]
 
 // const townIndices = [4, 78, 98, 123, 153, 179, 351, 601, 703]
 const cityIndices = cities.map((t) => t.location)
@@ -74,7 +37,6 @@ for (let i = 0; i < 400; i++) {
 
   if (i === trainIndex) {
     cell.classList.add('train')
-    cell.textContent = i
   }
 
   grid.appendChild(cell)
